@@ -9,7 +9,6 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 const restaurant = restaurants[0];
 
 const RestaurantDetailsScreen = () => {
-
   const route = useRoute();
   const navigation = useNavigation();
 
@@ -23,13 +22,17 @@ const RestaurantDetailsScreen = () => {
             renderItem={({item}) => <DishListItem dish={item} />}
             keyExtractor={(item) => item.name}
         />
-        <Ionicons
-            onPress={() => navigation.goBack()}
-            name="arrow-back-circle"
-            size={45}
-            color="white"
-            style={styles.iconContainer} 
-        />
+        <View
+            style={styles.iconContainer}
+        >
+          <Ionicons
+              onPress={() => navigation.goBack()}
+              name="chevron-back"
+              size={30}
+              color="#151515"
+              style={styles.icon}
+          />
+        </View>
     </View>
   );
 }

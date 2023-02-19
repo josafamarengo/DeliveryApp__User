@@ -8,15 +8,24 @@ import DishDetailsScreen from '../screens/DishDetailsScreen';
 import BasketScreen from '../screens/BasketScreen';
 import OrdersScreen from '../screens/OrdersScreen';
 import OrderDetailsScreen from '../screens/OrderDetailsScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
 return (
-    <Stack.Navigator initialRouteName='Home' screenOptions={{ headerShown: 'false'}}>
+    <Stack.Navigator 
+        initialRouteName='Home' 
+        screenOptions={{ 
+            headerShown: 'false',
+        }}
+    >
         <Stack.Screen 
-            name="Home" 
+            name="Delivery" 
             component={TabNavigation}
+            options={{
+                headerShown: false
+            }}
         />
         <Stack.Screen 
             name="Dish" 
@@ -42,14 +51,21 @@ const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigation = () => {
     return (
-        <Tab.Navigator barStyle={{ backgroundColor: 'white'}}>
+        <Tab.Navigator 
+            barStyle={{
+                backgroundColor: '#151515',
+            }}
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
             <Tab.Screen
                 name="Home"
                 component={HomeStackScreen}
                 options={{
                     tabBarLabel: 'Início',
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                        <MaterialCommunityIcons name="home" color={color} size={24} />
                     ),
                 }}
             />
@@ -59,7 +75,7 @@ const TabNavigation = () => {
                 options={{
                     tabBarLabel: 'Histórico',
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="clipboard-list" color={color} size={26} />
+                        <MaterialCommunityIcons name="clipboard-list" color={color} size={24} />
                     ),
                 }}
             />
@@ -69,17 +85,17 @@ const TabNavigation = () => {
                 options={{
                     tabBarLabel: 'Em andamento',
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="basket" color={color} size={26} />
+                        <MaterialCommunityIcons name="basket" color={color} size={24} />
                     ),
                 }}
             />
             <Tab.Screen
                 name="Profile"
-                component={HomeScreen}
+                component={ProfileScreen}
                 options={{
                     tabBarLabel: 'Meu perfil',
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="account" color={color} size={26} />
+                        <MaterialCommunityIcons name="account" color={color} size={24} />
                     ),
                 }}
             />
@@ -91,7 +107,11 @@ const HomeStack = createNativeStackNavigator();
 
 const HomeStackScreen = () => {
     return (
-        <HomeStack.Navigator>
+        <HomeStack.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
             <HomeStack.Screen 
                 name="Início" 
                 component={HomeScreen}

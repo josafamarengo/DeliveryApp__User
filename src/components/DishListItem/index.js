@@ -1,10 +1,13 @@
 import { Text, View, StyleSheet, Image, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import DishDetailsScreen from '../../screens/DishDetailsScreen';
+import { useDispatch } from 'react-redux';
+import { formatValue } from '../../utils/formatValues';
 
 const DishListItem = ({ dish }) => {
 
-    const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  const navigation = useNavigation();
 
   return (
     <Pressable 
@@ -15,7 +18,9 @@ const DishListItem = ({ dish }) => {
         <View style={{flex: 1}}>
             <Text style={styles.title}>{dish.name}</Text>
             <Text style={styles.description}>{dish.description}</Text>
-            <Text style={styles.price}>{dish.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</Text>
+            <Text style={styles.price}>
+                {formatValue(dish.price)}
+            </Text>
         </View>
         {dish.image && (<Image style={styles.image} source={{ uri: dish.image }} />
         )}
@@ -33,20 +38,21 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     title: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '600',
     },
     description: {
         color: 'gray',
         marginVertical: 5,
+        fontSize: 12,
     },
     price: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'bold',
     },
     image: {
-        width: 100,
-        height: 100,
+        width: 80,
+        aspectRatio: 1,
         borderRadius: 10,
         marginLeft: 10,
     },

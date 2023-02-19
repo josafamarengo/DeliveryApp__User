@@ -1,0 +1,26 @@
+[
+    {
+    "id": "1",
+        "name": "Pizza",
+        "img": "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pizza-PNG-1024x553.png",
+        "color": "#7FFFD4",
+    },
+    {
+    "id": "2",
+        "name": "Lanche",
+        "img": "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pizza-PNG-1024x553.png",
+        "color": "#F4A460"
+    },
+    {
+    "id": "3",
+        "name": "Açaí",
+        "img": "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pizza-PNG-1024x553.png",
+        "color": "#F0E68C"
+    },
+    {
+    "id": "4",
+        "name": "Mercado",
+        "img": "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pizza-PNG-1024x553.png",
+        "color": "#FA8072"
+    }
+]

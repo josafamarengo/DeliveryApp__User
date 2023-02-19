@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import restaurants from '../../../assets/data/restaurants.json';
+import { formatValue } from '../../utils/formatValues';
 
 const BasketItem = ({ basketDish }) => {
   return (
@@ -17,9 +17,11 @@ const BasketItem = ({ basketDish }) => {
         <Text style={styles.dishDescription}>
           {basketDish.description}
         </Text>
+      </View>
 
+      <View style={styles.priceContainer}>
         <Text style={styles.dishPrice}>
-          {basketDish.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
+          {formatValue(basketDish.price)}
         </Text>
       </View>
     </View>
@@ -31,44 +33,40 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50,
+    marginTop: 30,
     },
     quantityContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#f3f3f3',
-        borderRadius: 10,
-        width: 60,
-        height: 50,
-        marginLeft: 10,
+        width: 50,
     },
     quantity: {
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: '600',
     },
     dishInfo: {
         flex: 1,
         alignItems: 'flex-start',
         justifyContent: 'center',
-        marginLeft: 10,
     },
     dishName: {
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: '600',
-        marginLeft: 10,
     },
     dishDescription: {
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: '400',
-        marginLeft: 10,
         color: '#6e6969',
     },
+    priceContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 100,
+    },
     dishPrice: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '600',
-        marginLeft: 10,
-        color: '#e47911',
     },
 });
 
