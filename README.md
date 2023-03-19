@@ -8,8 +8,11 @@
 
   <p align="center">
     Joining efforts to bring happiness to your doorstep, with the dedicated and valued work of our delivery drivers
-    <br />
-    <br />
+    <br>
+    <br>
+    <a href="https://josafamarengo.github.io/DeliveryApp__User/"><strong>Explore the docs »</strong></a>
+    <br>
+    <br>
     <a href="https://github.com/josafamarengo/DeliveryApp__User/issues">Report Bug</a>
     ·
     <a href="https://github.com/josafamarengo/DeliveryApp__User/issues">Request Feature</a>
