@@ -12,8 +12,6 @@ export default function index({color,category, image}) {
     >
         <View
             style={{
-                borderRadius: 5,
-                backgroundColor: color,
                 height: 60,
                 width: 90,
                 alignItems: 'center',
@@ -26,6 +24,17 @@ export default function index({color,category, image}) {
                     width: 80,
                     height: 80,
                     resizeMode: 'contain',
+                    zIndex: 1,
+                }}
+            />
+            <View
+                style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    backgroundColor: color,
+                    width: 90,
+                    height: '40%',
+                    borderRadius: 5,
                 }}
             />
         </View>
